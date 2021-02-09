@@ -13,12 +13,21 @@ Source,Destination
 <project_id>:<dataset_id>,<project_id>:<dataset_id>
 ```
 ## GCP Permissions
-* BigQuery Data Owner
+Following permissions are required for the Python scripts to execute properly. [More details here](https://cloud.google.com/bigquery/docs/access-control#bigquery)
+* BigQuery Data Owner (roles/bigquery.dataOwner)
+* BigQuuery Admin (roles/bigquery.admin)
 
 ## Environment
 * Install python3 
 * Install Python Google Cloud Library
 ``` pip3 install google-cloud-bigquery ```
+* Install gcloud sdk
+* Configure gcloud environment. [More details here](https://cloud.google.com/sdk/docs/initializing)
+``` 
+gcloud init
+gcloud auth application-default login
+gcloud config configurations list
+```
 
 
 # Execution
@@ -41,8 +50,3 @@ Two steps process to read the permissions from the source, then review it manual
 ```
     python3 bq_update_permissions_destination.py 
 ```
-
-
-
-
-
